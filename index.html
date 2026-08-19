@@ -10,10 +10,28 @@
 
     <meta
         name="description"
-        content="بورتفوليو مدرس اللغة العربية - تعليم اللغة العربية بأسلوب يجمع بين الأصالة والإبداع."
+        content="بورتفوليو مدرس اللغة العربية محمد عيد - تعليم اللغة العربية بأسلوب يجمع بين الأصالة والإبداع. تبسيط القاعدة، الفهم قبل الحفظ."
     >
 
-    <title>مدرس اللغة العربية | بورتفوليو</title>
+    <title>محمد عيد | مدرس اللغة العربية</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="محمد عيد | مدرس اللغة العربية">
+    <meta property="og:description" content="بورتفوليو مدرس اللغة العربية - تعليم اللغة العربية بأسلوب يجمع بين الأصالة والإبداع.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mr-mohamedeid.vercel.app/">
+    <meta property="og:image" content="https://mr-mohamedeid.vercel.app/teacher.jpg">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:site_name" content="محمد عيد - مدرس اللغة العربية">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="محمد عيد | مدرس اللغة العربية">
+    <meta name="twitter:description" content="بورتفوليو مدرس اللغة العربية - تعليم اللغة العربية بأسلوب يجمع بين الأصالة والإبداع.">
+    <meta name="twitter:image" content="https://mr-mohamedeid.vercel.app/teacher.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23030303' width='100' height='100' rx='10'/><text y='72' x='50' text-anchor='middle' fill='%23e7cb7b' font-size='65' font-family='serif'>ع</text></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,12 +111,15 @@
 
         </div>
 
-        <nav class="nav-links">
+        <nav class="nav-links" id="navLinks">
 
             <a href="#home">الرئيسية</a>
             <a href="#about">نبذة عني</a>
+            <a href="#achievements">الإنجازات</a>
             <a href="#method">منهجي</a>
             <a href="#videos">الفيديوهات</a>
+            <a href="#testimonials">آراء الطلاب</a>
+            <a href="#faq">أسئلة شائعة</a>
             <a href="#contact">تواصل</a>
 
         </nav>
@@ -111,7 +132,21 @@
             <span>↗</span>
         </a>
 
+        <!-- Hamburger Menu -->
+        <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="القائمة"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
 
     <!-- =====================================================
@@ -208,14 +243,14 @@
 
                 <div class="hero-quote reveal">
 
-                    <span class="quote-mark">“</span>
+                    <span class="quote-mark">"</span>
 
                     <p>
                         العربية ليست مادة تُدرَس فقط،
-                        بل لغة تُعاش ويُعبَّر بها عن الفكر والجمال.
+                        بل لغة تُعاش ويُعبَّر بها عن الفكر والجمال.
                     </p>
 
-                    <span class="quote-mark closing">”</span>
+                    <span class="quote-mark closing">"</span>
 
                 </div>
 
@@ -236,7 +271,7 @@
 
                     <img
                         src="teacher.jpg"
-                        alt="مدرس اللغة العربية"
+                        alt="محمد عيد - مدرس اللغة العربية"
                     >
 
                 </div>
@@ -408,6 +443,104 @@
 
 
         <!-- =====================================================
+             ACHIEVEMENTS
+        ====================================================== -->
+
+        <section
+            class="section achievements-section"
+            id="achievements"
+        >
+
+            <div class="section-number">
+                02 / ACHIEVEMENTS
+            </div>
+
+            <div class="section-heading center reveal">
+
+                <span class="eyebrow">
+                    مسيرة علمية
+                </span>
+
+                <h2>
+                    الإنجازات
+                    <em>والشهادات</em>
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <div class="achievements-grid">
+
+                <!-- Achievement 1 -->
+                <article class="achievement-card reveal">
+
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/>
+                        </svg>
+                    </div>
+
+                    <div class="achievement-badge">شهادة جامعية</div>
+
+                    <h3>ليسانس آداب</h3>
+
+                    <p>قسم اللغة العربية</p>
+
+                    <span class="achievement-place">جامعة المنوفية</span>
+
+                </article>
+
+
+                <!-- Achievement 2 -->
+                <article class="achievement-card featured reveal">
+
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"/>
+                            <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/>
+                        </svg>
+                    </div>
+
+                    <div class="achievement-badge">العمل الحالي</div>
+
+                    <h3>مصحِّح ومدقِّق لغوي</h3>
+
+                    <p>تصحيح ولغة النصوص والأعمال الكتابية</p>
+
+                    <span class="achievement-place">الدار العربية للنشر والتوزيع</span>
+
+                </article>
+
+
+                <!-- Achievement 3 -->
+                <article class="achievement-card reveal">
+
+                    <div class="achievement-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                        </svg>
+                    </div>
+
+                    <div class="achievement-badge">التخصص</div>
+
+                    <h3>أستاذ النحو والصرف</h3>
+
+                    <p>والأدب والبلاغة والعروض</p>
+
+                    <span class="achievement-place">خبرة واسعة في تدريس الفروع اللغوية</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
              METHOD
         ====================================================== -->
 
@@ -417,7 +550,7 @@
         >
 
             <div class="section-number">
-                02 / METHOD
+                03 / METHOD
             </div>
 
             <div class="section-heading center reveal">
@@ -652,7 +785,7 @@
         >
 
             <div class="section-number">
-                03 / LESSONS
+                04 / LESSONS
             </div>
 
             <div class="section-heading center reveal">
@@ -815,6 +948,323 @@
 
 
         <!-- =====================================================
+             TESTIMONIALS
+        ====================================================== -->
+
+        <section
+            class="section testimonials-section"
+            id="testimonials"
+        >
+
+            <div class="section-number">
+                05 / TESTIMONIALS
+            </div>
+
+            <div class="section-heading center reveal">
+
+                <span class="eyebrow">
+                    آراء الطلاب
+                </span>
+
+                <h2>
+                    ماذا يقول
+                    <em>طلابنا</em>؟
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <div class="testimonials-container reveal">
+
+                <div class="testimonials-track" id="testimonialsTrack">
+
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-quote">"</div>
+
+                        <p>
+                            أستاذ محمد غيّر نظرتي للعربية completely. كان دايمًا يربط القواعد بأمثلة من الحياة اليومية، وبقالي سنة بفهم قبل ما أحفظ.
+                        </p>
+
+                        <div class="testimonial-author">
+
+                            <div class="author-avatar">أ</div>
+
+                            <div>
+                                <strong>أحمد محمد</strong>
+                                <span>طالب ثانوية عامة</span>
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-stars">★★★★★</div>
+
+                    </div>
+
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-quote">"</div>
+
+                        <p>
+                            شرح النحو عند أستاذ محمد شيء مختلف تمامًا. بقادر أحل أي سؤال دلوقتي因为我 understands the logic ورا كل قاعدة.
+                        </p>
+
+                        <div class="testimonial-author">
+
+                            <div class="author-avatar">س</div>
+
+                            <div>
+                                <strong>سارة عبد الرحمن</strong>
+                                <span>طالبة جامعية</span>
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-stars">★★★★★</div>
+
+                    </div>
+
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-quote">"</div>
+
+                        <p>
+                            الامتحان النهائي خلاني أعرف قد إيه أستاذ محمد مجهزني. النتيجة كانت ممتازة والشكر لله ثم له.
+                        </p>
+
+                        <div class="testimonial-author">
+
+                            <div class="author-avatar">م</div>
+
+                            <div>
+                                <strong>محمد سعيد</strong>
+                                <span>طالب إعدادي</span>
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-stars">★★★★★</div>
+
+                    </div>
+
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-quote">"</div>
+
+                        <p>
+                            كونه مصحِّح لغوي بيساعد في شرح الأخطاء الشائعة اللي كتير من الدكاترة بيمروا عليها. شغل احترافي ومعلومة دقيقة.
+                        </p>
+
+                        <div class="testimonial-author">
+
+                            <div class="author-avatar">ف</div>
+
+                            <div>
+                                <strong> Fatma Hassan</strong>
+                                <span>أم طالب</span>
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-stars">★★★★★</div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Testimonials Navigation -->
+                <div class="testimonials-nav">
+
+                    <button
+                        class="testimonial-prev"
+                        id="testimonialPrev"
+                        aria-label="السابق"
+                    >
+                        ←
+                    </button>
+
+                    <div class="testimonial-dots" id="testimonialDots">
+                    </div>
+
+                    <button
+                        class="testimonial-next"
+                        id="testimonialNext"
+                        aria-label="التالي"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FAQ
+        ====================================================== -->
+
+        <section
+            class="section faq-section"
+            id="faq"
+        >
+
+            <div class="section-number">
+                06 / FAQ
+            </div>
+
+            <div class="faq-layout">
+
+                <div class="section-heading reveal">
+
+                    <span class="eyebrow">
+                        أسئلة شائعة
+                    </span>
+
+                    <h2>
+                        عندك
+                        <em>سؤال</em>؟
+                    </h2>
+
+                    <div class="heading-line"></div>
+
+                    <p>
+                        إجابات على أكثر الاستفسارات شيوعًا.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <!-- FAQ 1 -->
+                    <div class="faq-item reveal">
+
+                        <button class="faq-question" aria-expanded="false">
+
+                            <span>ما الفروقات بين الدروس الخاصة والمجموعات؟</span>
+
+                            <span class="faq-icon">+</span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                الدروس الخاصة تتم بشكل فردي مع التركيز على احتياجات الطالب تحديدًا، أما الدروس الجماعية فتتم مع مجموعة صغيرة من الطلاب بنفس المستوى للاستفادة من التفاعل والمنافسة الإيجابية.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item reveal">
+
+                        <button class="faq-question" aria-expanded="false">
+
+                            <span>هل توجد فترة تجريبية قبل التسجيل؟</span>
+
+                            <span class="faq-icon">+</span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                نعم، نوفر أول درس تجريبي مجاني لتقييم الطالب وتحديد مستواه وإيجاد الخطة التعليمية المناسبة له.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item reveal">
+
+                        <button class="faq-question" aria-expanded="false">
+
+                            <span>ما المواد التي يُدرِّسها الأستاذ محمد؟</span>
+
+                            <span class="faq-icon">+</span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                يُدرِّس النحو والصرف والأدب والبلاغة والعروض، مع خبرة واسعة في التدريب على الامتحانات وتصحيح اللغوي.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item reveal">
+
+                        <button class="faq-question" aria-expanded="false">
+
+                            <span>هل يمكن تأجيل أو إلغاء الدروس؟</span>
+
+                            <span class="faq-icon">+</span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                نعم، يمكن تأجيل الدرس بإشعار مسبق 24 ساعة. أما الإلغاء فيتم قبل 48 ساعة لضمان تخصيص الوقت لطلاب آخرين.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item reveal">
+
+                        <button class="faq-question" aria-expanded="false">
+
+                            <span>هل توجد خطة للمراجعة قبل الامتحانات؟</span>
+
+                            <span class="faq-icon">+</span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                بالتأكيد. نوفر خطط مراجعة مكثفة قبل الامتحانات تشمل تلخيص شامل للمنهج وتدريب على الأسئلة السابقة مع حلول نموذجية.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
              CTA
         ====================================================== -->
 
@@ -910,6 +1360,131 @@
         </section>
 
     </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+
+                    <span class="logo-symbol">ع</span>
+
+                    <div>
+                        <strong>محمد عيد</strong>
+                        <small>مدرس اللغة العربية</small>
+                    </div>
+
+                </div>
+
+                <p>
+                    تعليم اللغة العربية بأسلوب يجمع بين الأصالة والإبداع.
+                    تبسيط القاعدة، الفهم قبل الحفظ.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links-group">
+
+                <h4>روابط سريعة</h4>
+
+                <nav class="footer-links">
+
+                    <a href="#home">الرئيسية</a>
+                    <a href="#about">نبذة عني</a>
+                    <a href="#achievements">الإنجازات</a>
+                    <a href="#method">منهجي</a>
+
+                </nav>
+
+            </div>
+
+
+            <div class="footer-links-group">
+
+                <h4>المزيد</h4>
+
+                <nav class="footer-links">
+
+                    <a href="#videos">الفيديوهات</a>
+                    <a href="#testimonials">آراء الطلاب</a>
+                    <a href="#faq">أسئلة شائعة</a>
+                    <a href="#contact">تواصل معنا</a>
+
+                </nav>
+
+            </div>
+
+
+            <div class="footer-social">
+
+                <h4>تابعنا</h4>
+
+                <div class="social-links">
+
+                    <a
+                        href="#"
+                        class="social-link"
+                        aria-label="يوتيوب"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="social-link"
+                        aria-label="فيسبوك"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+
+                    <a
+                        href="#"
+                        class="social-link"
+                        aria-label="إنستجرام"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2025 محمد عيد. جميع الحقوق محفوظة.
+            </p>
+
+            <p>
+                صُمم بـ <span class="heart">♥</span> لخدمة اللغة العربية
+            </p>
+
+        </div>
+
+    </footer>
 
 
     <!-- =====================================================

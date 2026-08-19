@@ -2,16 +2,6 @@
    SETTINGS
 ========================================================= */
 
-/*
-    ضع رقم واتساب المدرس هنا.
-
-    مثال:
-    01012345678
-
-    سيصبح:
-    201012345678
-*/
-
 const WHATSAPP_NUMBER = "201029564663";
 
 const WHATSAPP_MESSAGE =
@@ -52,6 +42,42 @@ function handleNavbar() {
 window.addEventListener("scroll", handleNavbar);
 
 handleNavbar();
+
+
+/* =========================================================
+   HAMBURGER MENU
+========================================================= */
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+const mobileOverlay = document.getElementById("mobileOverlay");
+
+function toggleMenu() {
+
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+    mobileOverlay.classList.toggle("active");
+    document.body.classList.toggle("modal-open");
+
+}
+
+function closeMenu() {
+
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("active");
+    mobileOverlay.classList.remove("active");
+    document.body.classList.remove("modal-open");
+
+}
+
+hamburger.addEventListener("click", toggleMenu);
+mobileOverlay.addEventListener("click", closeMenu);
+
+navLinks.querySelectorAll("a").forEach((link) => {
+
+    link.addEventListener("click", closeMenu);
+
+});
 
 
 /* =========================================================
@@ -98,7 +124,7 @@ revealElements.forEach((element) => {
 ========================================================= */
 
 const grids = document.querySelectorAll(
-    ".method-grid, .video-grid, .values-list"
+    ".method-grid, .video-grid, .values-list, .achievements-grid"
 );
 
 grids.forEach((grid) => {
@@ -138,11 +164,6 @@ const modalOverlay =
 
 function openVideo(videoId) {
 
-    /*
-        نستخدم youtube-nocookie
-        لتقليل مشاكل الخصوصية والـ cookies.
-    */
-
     const embedUrl =
         `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
 
@@ -160,11 +181,6 @@ function closeVideo() {
     videoModal.classList.remove("active");
 
     document.body.classList.remove("modal-open");
-
-    /*
-        إيقاف الفيديو تمامًا
-        عند إغلاق النافذة.
-    */
 
     setTimeout(() => {
 
@@ -201,10 +217,6 @@ modalOverlay.addEventListener(
     closeVideo
 );
 
-
-/*
-    إغلاق الفيديو بزر ESC
-*/
 
 document.addEventListener(
     "keydown",
@@ -556,6 +568,258 @@ if (heroTitle) {
     );
 
 }
+
+
+/* =========================================================
+   TESTIMONIALS SLIDER
+========================================================= */
+
+const testimonialsTrack =
+    document.getElementById("testimonialsTrack");
+
+const testimonialPrev =
+    document.getElementById("testimonialPrev");
+
+const testimonialNext =
+    document.getElementById("testimonialNext");
+
+const testimonialDots =
+    document.getElementById("testimonialDots");
+
+let currentTestimonial = 0;
+let testimonialAutoPlay;
+
+
+function getTestimonialsPerView() {
+
+    if (window.innerWidth <= 650) return 1;
+    if (window.innerWidth <= 1000) return 2;
+    return 3;
+
+}
+
+
+function getTotalTestimonialPages() {
+
+    const cards =
+        testimonialsTrack
+            .querySelectorAll(".testimonial-card");
+
+    const perView =
+        getTestimonialsPerView();
+
+    return Math.max(
+        1,
+        cards.length - perView + 1
+    );
+
+}
+
+
+function createTestimonialDots() {
+
+    testimonialDots.innerHTML = "";
+
+    const total =
+        getTotalTestimonialPages();
+
+    for (let i = 0; i < total; i++) {
+
+        const dot =
+            document.createElement("div");
+
+        dot.classList.add(
+            "testimonial-dot"
+        );
+
+        if (i === 0) {
+            dot.classList.add("active");
+        }
+
+        dot.addEventListener("click", () => {
+
+            goToTestimonial(i);
+
+        });
+
+        testimonialDots.appendChild(dot);
+
+    }
+
+}
+
+
+function goToTestimonial(index) {
+
+    const total =
+        getTotalTestimonialPages();
+
+    currentTestimonial = index;
+
+    if (currentTestimonial >= total) {
+        currentTestimonial = 0;
+    }
+
+    if (currentTestimonial < 0) {
+        currentTestimonial = total - 1;
+    }
+
+    const card =
+        testimonialsTrack
+            .querySelector(".testimonial-card");
+
+    if (!card) return;
+
+    const cardWidth =
+        card.offsetWidth + 25;
+
+    testimonialsTrack.style.transform =
+        `translateX(${currentTestimonial * cardWidth}px)`;
+
+    updateTestimonialDots();
+
+}
+
+
+function updateTestimonialDots() {
+
+    const dots =
+        testimonialDots
+            .querySelectorAll(".testimonial-dot");
+
+    dots.forEach((dot, i) => {
+
+        dot.classList.toggle(
+            "active",
+            i === currentTestimonial
+        );
+
+    });
+
+}
+
+
+function nextTestimonial() {
+
+    goToTestimonial(
+        currentTestimonial + 1
+    );
+
+}
+
+
+function prevTestimonial() {
+
+    goToTestimonial(
+        currentTestimonial - 1
+    );
+
+}
+
+
+testimonialNext.addEventListener(
+    "click",
+    nextTestimonial
+);
+
+testimonialPrev.addEventListener(
+    "click",
+    prevTestimonial
+);
+
+
+function startTestimonialAutoplay() {
+
+    testimonialAutoPlay = setInterval(
+        nextTestimonial,
+        5000
+    );
+
+}
+
+
+function stopTestimonialAutoplay() {
+
+    clearInterval(testimonialAutoPlay);
+
+}
+
+
+const testimonialsContainer =
+    document.querySelector(
+        ".testimonials-container"
+    );
+
+if (testimonialsContainer) {
+
+    testimonialsContainer.addEventListener(
+        "mouseenter",
+        stopTestimonialAutoplay
+    );
+
+    testimonialsContainer.addEventListener(
+        "mouseleave",
+        startTestimonialAutoplay
+    );
+
+}
+
+
+createTestimonialDots();
+startTestimonialAutoplay();
+
+window.addEventListener("resize", () => {
+
+    createTestimonialDots();
+    goToTestimonial(0);
+
+});
+
+
+/* =========================================================
+   FAQ ACCORDION
+========================================================= */
+
+const faqItems =
+    document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+
+    const question =
+        item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+
+        const isActive =
+            item.classList.contains("active");
+
+        faqItems.forEach((otherItem) => {
+
+            otherItem.classList.remove("active");
+
+            otherItem
+                .querySelector(".faq-question")
+                .setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+        });
+
+        if (!isActive) {
+
+            item.classList.add("active");
+
+            question.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+        }
+
+    });
+
+});
 
 
 /* =========================================================
